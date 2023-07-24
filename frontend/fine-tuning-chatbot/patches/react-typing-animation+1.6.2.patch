@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-typing-animation/dist/Typing.js b/node_modules/react-typing-animation/dist/Typing.js
+index 9b7423d..c8c37cc 100644
+--- a/node_modules/react-typing-animation/dist/Typing.js
++++ b/node_modules/react-typing-animation/dist/Typing.js
+@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
+   value: true
+ });
+ 
+-var _regenerator = require('babel-runtime/regenerator');
++var _regenerator = require('@babel/runtime/regenerator');
+ 
+ var _regenerator2 = _interopRequireDefault(_regenerator);
+ 
