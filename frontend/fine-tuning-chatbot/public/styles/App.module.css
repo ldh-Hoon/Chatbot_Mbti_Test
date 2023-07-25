@@ -9,48 +9,49 @@
   font-family: 'yeonjiche';
   src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
 }
+
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
 /* App.module.css */
 /* Regular CSS syntax without :global */
 .app-container {
   font-family: 'jagbyeol', 'yeonjiche';
-  box-sizing:border-box;
-  max-width : 300px;
+  box-sizing: border-box;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
 }
 
 /* 말풍선 스타일 */
 .user-message,
 .bot-message {
-  padding: 0 1.5rem;
-  border-radius: 2px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
   margin-bottom: 10px;
-  max-width : 300px;
+  max-width: 80%;
   display: inline-block;
   font-family: 'jagbyeol';
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 사용자 말풍선 스타일 */
 .user-message {
-  background-color: #ffe3bb;
+  background-color: #ee8961;
+  color: white;
   align-self: flex-end;
-  border: 2px solid #000000; /* 사용자 말풍선에 검은색 테두리 선 추가 */
-  float: right; /* Align user messages to the right */
-  clear: both; /* Clear the float to ensure correct layout */
+  float: right;
+  clear: both;
   font-family: 'yeonjiche';
-  font-size: 20px;
 }
-
 /* AI 말풍선 스타일 */
 .bot-message {
-  background-color: #ffffff;
+  background-color: #f5a788;
+  color: #333;
   align-self: flex-start;
-  border: 2px solid #000000; /* AI 말풍선에 검은색 테두리 선 추가 */
-  float: left; /* Align AI messages to the left */
-  clear: both; /* Clear the float to ensure correct layout */
-  font-family: 'jagbyeol';
-  font-size: 20px;
-  margin-left: 10px;
+  float: left;
+  clear: both;
 }
 
 /* 채팅 창 전체 스타일 */
@@ -60,16 +61,15 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
-  width: 80vw; /* 너비를 원하는 값으로 조정합니다. 예: 90% */
-  max-width : 500px;
-  margin: auto auto;
-  
+  width: 80vw;
+  max-width: 500px;
+  margin: auto;
   background-color: #ffe9e0;
-  border: 2px solid #000000;
-  box-shadow: 5px 5px 20px grey;
-
+  border: 2px solid #ee8961;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   font-family: 'jagbyeol';
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* 대화 기록을 감싸는 컨테이너 스타일 */
@@ -78,48 +78,46 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 60vw;
+  width: 80%;
+  max-width: 400px;
   height: 60vh;
-  max-width : 500px;
-  overflow-y: auto; /* 스크롤 적용 */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
   font-family: 'jagbyeol';
-  font-size: 20px;
-  margin: auto auto;
-  margin-right: 10px;
+  font-size: 18px;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .message-list::-webkit-scrollbar {
-  width: 20px;
-}
-.message-list::-webkit-scrollbar-thumb {
-  background-color: #f5a788;
-  border-radius: 10px;
-  background-clip: padding-box;
-  border: 4px solid #ffe9e0;
-}
-.message-list::-webkit-scrollbar-track {
-  background-color: #ffe9e0;
-  border-radius: 10px;
-  box-shadow: inset 0px 0px 5px #ffe9e0;
+  width: 8px;
 }
 
-.message-input-box {
-  font-family: 'yeonjiche';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.message-list::-webkit-scrollbar-thumb {
+  background-color: #ee8961;
+  border-radius: 10px;
 }
+
+.message-list::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 6px #fff;
+}
+
 
 .user-input-box input {
   margin-top: 10px;
   font-family: 'yeonjiche';
-  font-size: 20px;
-  padding: 8px;
-  width: 40vw;
-  max-width : 300px;
-  border: 2px solid #000000;
-  border-radius: 4px;
+  font-size: 18px;
+  padding: 10px;
+  width: 60%;
+  max-width: 300px;
+  border: 2px solid #ee8961;
+  border-radius: 20px;
   margin-right: 5px;
   align-self: flex-end;
   float: right;
@@ -127,15 +125,26 @@
 
 .user-input-box button {
   font-family: 'yeonjiche';
-  font-size: 20px;
-  padding: 8px 12px;
+  font-size: 18px;
+  padding: 10px;
   margin-top: 10px;
   margin-right: 10px;
   background-color: #ee8961;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
   align-self: flex-end;
   float: right;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Clearfix to handle floating elements */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.user-input-box button:hover{
+  box-shadow: 0px 2px 5px #968080;
 }

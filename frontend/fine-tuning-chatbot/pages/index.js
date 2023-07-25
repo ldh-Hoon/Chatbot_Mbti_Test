@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState , useEffect, useRef } from "react";
 import styles from "../public/styles/App.module.css";
 const BACKEND_URL = "http://127.0.0.1:8000/";
 
@@ -35,7 +35,7 @@ const ans_middle = ['음...슬슬 조금만 더 들으면 알 수 있겠는데..
               '오호...윤곽이 보인다!',
               '너의 mbti는 파악되고있다...'];
 
-const max_tern = 3;
+const max_tern = 10;
 
 
 var loading_wait = 0;
@@ -68,6 +68,16 @@ function convertLabelToStr(label){
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
+  const messageListRef = useRef(null);
+
+  var el = document.getElementById('message-list'); 
+  const scrollToBottom = () => {
+    el = document.getElementById('message-list'); 
+    el.scrollTop = el.scrollHeight;
+  }
+  useEffect(() => {
+    scrollToBottom(); // 컴포넌트가 렌더링될 때 스크롤을 아래로 이동
+  }, [messages]);
 
   useEffect(() => {//처음 한 번만 실행
     var initialBotMessage = {
@@ -86,13 +96,14 @@ const ChatApp = () => {
   }, []);
 
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = async () => {    
+    // id of the chat container ---------- ^^^
     if (inputMessage.trim() !== "") {
       if(loading_wait==0){
         if(tern<max_tern){
           loading_wait = 1;
           const newMessage = { text: inputMessage, isUser: true };
-          setMessages((prevMessages) => [...prevMessages, newMessage]);
+          setMessages((prevMessages) => [...prevMessages, newMessage]); 
           user_log += inputMessage + ", ";
           //내용만 보여지게 표시
           setInputMessage(""); // 메시지 전송 후 입력창 초기화
@@ -119,7 +130,7 @@ const ChatApp = () => {
             all_log += bot_ans;
             // 챗봇의 응답 메시지를 메시지 목록에 추가
             const botResponseMessage = { text: bot_ans, isUser: false };
-            setMessages((prevMessages) => [...prevMessages, botResponseMessage]);
+            setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             loading_wait = 0;
           } catch (error) {
             console.error("Error sending message:", error);
@@ -131,7 +142,7 @@ const ChatApp = () => {
               text: t, 
               isUser: false,
             };
-            setMessages((prevMessages) => [...prevMessages, initialBotMessage]);
+            setMessages((prevMessages) => [...prevMessages, initialBotMessage]); 
             all_log = "\nyou: " + t;
             need_ans_add = 1;
           }
@@ -142,7 +153,7 @@ const ChatApp = () => {
           try {
             loading_wait = 1;
             const newMessage = { text: inputMessage, isUser: true };
-            setMessages((prevMessages) => [...prevMessages, newMessage]);
+            setMessages((prevMessages) => [...prevMessages, newMessage]); 
             user_log += inputMessage + ", ";
             //내용만 보여지게 표시
             setInputMessage(""); // 메시지 전송 후 입력창 초기화
@@ -167,7 +178,7 @@ const ChatApp = () => {
               all_log += bot_ans;
               // 챗봇의 응답 메시지를 메시지 목록에 추가
               const botResponseMessage = { text: bot_ans, isUser: false };
-              setMessages((prevMessages) => [...prevMessages, botResponseMessage]);
+              setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             } catch (error) 
             {
               console.error("Error sending message:", error);
@@ -185,7 +196,7 @@ const ChatApp = () => {
             const bot_ans = convertLabelToStr(data['message'][0]['label']);
             // 챗봇의 응답 메시지를 메시지 목록에 추가 , convertLabelToStr
             var botResponseMessage = { text: "너의 mbti는 " + bot_ans + "구나!", isUser: false };
-            setMessages((prevMessages) => [...prevMessages, botResponseMessage]);
+            setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             
             const t = "<<ai예측 확률>>\n" + convertLabelToStr(data['message'][0]['label']) + " : " 
               + Math.round(data['message'][0]['score']*1000)/10 + "%, " 
@@ -194,7 +205,8 @@ const ChatApp = () => {
               + convertLabelToStr(data['message'][2]['label']) + " : "
               + Math.round(data['message'][2]['score']*1000)/10 + "%, " ;
             var botResponseMessage2 = { text: t, isUser: false };
-            setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
+            setMessages((prevMessages) => [...prevMessages, botResponseMessage2]); 
+
           
             loading_wait = 0;
           } 
@@ -209,7 +221,8 @@ const ChatApp = () => {
           const bot_ans = "...새로고침해주세요...";
           // 챗봇의 응답 메시지를 메시지 목록에 추가 , convertLabelToStr
           const botResponseMessage = { text: bot_ans, isUser: false };
-          setMessages((prevMessages) => [...prevMessages, botResponseMessage]);
+          setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
+
           loading_wait = 0;
         }
       tern += 1;
@@ -222,7 +235,7 @@ const ChatApp = () => {
       <div className={styles["chat-box"]}>
         <h1 max-width = "100px" align = "center">챗봇과 대화</h1>
         <h4 align = "center" >(현재 {max_tern+1}턴까지 대화 후 mbti반환)</h4>
-        <div className={styles["message-list"]}>
+        <div className={styles["message-list"]} id="message-list" name="message-list">
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
