@@ -37,7 +37,7 @@
 
 /* User Message Style */
 .user-message {
-  background-color: #ee8961;
+  background-color: #d1a08d;
   color: white;
   align-self: flex-end;
   float: right;
@@ -47,8 +47,8 @@
 
 /* AI Message Style */
 .bot-message {
-  background-color: #f5a788;
-  color: #333;
+  background-color: #ee8961;
+  color: #ffffff;
   align-self: flex-start;
   float: left;
   clear: both;
