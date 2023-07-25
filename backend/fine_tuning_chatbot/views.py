@@ -71,7 +71,8 @@ def get_mbti(request):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     result = loop.run_until_complete(fetch_mbti(text))
-    return Response(result)
+    print(result[0])
+    return Response({'message': result[0]})
 @api_view(['POST', 'GET'])
 def get_yn_response(request):
     if request.method == 'GET':

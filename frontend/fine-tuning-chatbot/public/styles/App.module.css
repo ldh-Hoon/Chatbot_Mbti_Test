@@ -4,10 +4,12 @@
   font-family: 'CustomFont';
   src: url('./fonts/das.ttf') format('truetype');
 }
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 /* App.module.css */
 /* Regular CSS syntax without :global */
 .app-container {
   font-family: 'CustomFont';
+  box-sizing:border-box;
 }
 
 /* 말풍선 스타일 */
@@ -24,7 +26,7 @@
 
 /* 사용자 말풍선 스타일 */
 .user-message {
-  background-color: #fefdd4;
+  background-color: #ffe3bb;
   align-self: flex-end;
   border: 2px solid #000000; /* 사용자 말풍선에 검은색 테두리 선 추가 */
   float: right; /* Align user messages to the right */
