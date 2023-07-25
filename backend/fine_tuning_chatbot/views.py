@@ -53,11 +53,12 @@ def get_chatbot_response(request):
         user_input,# str representing input in 'User input' Textbox component
 		0.9,	# float, representing input in 'Top-p (nucleus sampling)' Slider component
 		50,	# int, representing input in 'Top-k (nucleus sampling)' Slider component
-		0.8,	# float, representing input in 'Temperature' Slider component
-		20,	# int, representing input in 'Max New Tokens' Slider component
+		0.7,	# float, representing input in 'Temperature' Slider component
+		25,	# int, representing input in 'Max New Tokens' Slider component
 		1.2,	# float, representing input in 'repetition_penalty' Slider component
 		fn_index=0
     )
+    print(result)
     return Response(result)
 @api_view(['POST', 'GET'])
 def get_mbti(request):

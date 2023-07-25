@@ -1,15 +1,21 @@
 /* App.module.css */
 
 @font-face {
-  font-family: 'CustomFont';
-  src: url('./fonts/das.ttf') format('truetype');
+  font-family: 'jagbyeol';
+  src: url('./fonts/나눔손글씨 따뜻한 작별.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'yeonjiche';
+  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
 }
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 /* App.module.css */
 /* Regular CSS syntax without :global */
 .app-container {
-  font-family: 'CustomFont';
+  font-family: 'jagbyeol', 'yeonjiche';
   box-sizing:border-box;
+  max-width : 300px;
 }
 
 /* 말풍선 스타일 */
@@ -18,9 +24,9 @@
   padding: 0 1.5rem;
   border-radius: 2px;
   margin-bottom: 10px;
-  max-width: 80%;
+  max-width : 300px;
   display: inline-block;
-  font-family: 'CustomFont';
+  font-family: 'jagbyeol';
   font-size: 20px;
 }
 
@@ -31,7 +37,7 @@
   border: 2px solid #000000; /* 사용자 말풍선에 검은색 테두리 선 추가 */
   float: right; /* Align user messages to the right */
   clear: both; /* Clear the float to ensure correct layout */
-  font-family: 'CustomFont';
+  font-family: 'yeonjiche';
   font-size: 20px;
 }
 
@@ -42,8 +48,9 @@
   border: 2px solid #000000; /* AI 말풍선에 검은색 테두리 선 추가 */
   float: left; /* Align AI messages to the left */
   clear: both; /* Clear the float to ensure correct layout */
-  font-family: 'CustomFont';
+  font-family: 'jagbyeol';
   font-size: 20px;
+  margin-left: 10px;
 }
 
 /* 채팅 창 전체 스타일 */
@@ -53,16 +60,16 @@
   align-items: center;
   justify-content: center;
   height: 90vh;
-  width: 50vw; /* 너비를 원하는 값으로 조정합니다. 예: 90% */
+  width: 80vw; /* 너비를 원하는 값으로 조정합니다. 예: 90% */
+  max-width : 500px;
   margin: auto auto;
   
   background-color: #ffe9e0;
   border: 2px solid #000000;
   box-shadow: 5px 5px 20px grey;
 
-  font-family: 'CustomFont';
+  font-family: 'jagbyeol';
   font-size: 20px;
-  overflow-y: auto;
 }
 
 /* 대화 기록을 감싸는 컨테이너 스타일 */
@@ -71,11 +78,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 40vw;
+  width: 60vw;
   height: 60vh;
+  max-width : 500px;
   overflow-y: auto; /* 스크롤 적용 */
-  font-family: 'CustomFont';
+  font-family: 'jagbyeol';
   font-size: 20px;
+  margin: auto auto;
+  margin-right: 10px;
 }
 
 .message-list::-webkit-scrollbar {
@@ -94,7 +104,7 @@
 }
 
 .message-input-box {
-  font-family: 'CustomFont';
+  font-family: 'yeonjiche';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,10 +112,12 @@
 }
 
 .user-input-box input {
-  font-family: 'CustomFont';
+  margin-top: 10px;
+  font-family: 'yeonjiche';
   font-size: 20px;
   padding: 8px;
-  width: 20vw;
+  width: 40vw;
+  max-width : 300px;
   border: 2px solid #000000;
   border-radius: 4px;
   margin-right: 5px;
@@ -114,9 +126,11 @@
 }
 
 .user-input-box button {
-  font-family: 'CustomFont';
+  font-family: 'yeonjiche';
   font-size: 20px;
   padding: 8px 12px;
+  margin-top: 10px;
+  margin-right: 10px;
   background-color: #ee8961;
   color: white;
   border: none;
