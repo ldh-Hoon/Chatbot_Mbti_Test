@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "../public/styles/App.module.css";
 
 const BACKEND_URL = "http://127.0.0.1:8000/";
 var all_log = '';
@@ -50,29 +51,32 @@ const ChatApp = () => {
   };
 
   return (
-    <div className="chat-app">
-      <div className="chat-box">
+    <div className={styles["chat-app"]}>
+      <div className={styles["chat-box"]}>
         <h1>챗봇과 대화</h1>
-        <div className="message-list">
+        <div className={styles["message-list"]}>
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
         </div>
-        <div className="message-input-box">
-          <input
+        <div className={styles["user-input-box"]}>
+        <button onClick={handleSendMessage} className={styles["button-font"]}>Send</button> {/* 커스텀 폰트 적용 */}
+        <input
             type="text"
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
+            className={styles["input-font"]} // 커스텀 폰트 적용
           />
-          <button onClick={handleSendMessage}>Send</button>
         </div>
       </div>
     </div>
   );
 };
 
+
+
 const Message = ({ message }) => {
-  const messageClass = message.isUser ? "user-message" : "bot-message";
+  const messageClass = message.isUser ? styles["user-message"] : styles["bot-message"]; // Use styles object for dynamic class names
 
   return (
     <div className={messageClass}>
