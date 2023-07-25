@@ -47,19 +47,17 @@ def get_chatbot_response(request):
     elif request.method == 'POST':
         user_input = request.data.get('message', '')  # 사용자의 입력을 가져옴
 
-    print(user_input)
     # Gradio 클라이언트를 초기화
     # Gradio 클라이언트를 사용하여 챗봇에 요청 보내기
     result = gradio_client.predict(
         user_input,# str representing input in 'User input' Textbox component
 		0.9,	# float, representing input in 'Top-p (nucleus sampling)' Slider component
 		50,	# int, representing input in 'Top-k (nucleus sampling)' Slider component
-		0.7,	# float, representing input in 'Temperature' Slider component
+		0.8,	# float, representing input in 'Temperature' Slider component
 		20,	# int, representing input in 'Max New Tokens' Slider component
 		1.2,	# float, representing input in 'repetition_penalty' Slider component
 		fn_index=0
     )
-    print(result)
     return Response(result)
 @api_view(['POST', 'GET'])
 def get_mbti(request):
@@ -71,8 +69,7 @@ def get_mbti(request):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     result = loop.run_until_complete(fetch_mbti(text))
-    print(result[0])
-    return Response({'message': result[0]})
+    return Response({"message":result})
 @api_view(['POST', 'GET'])
 def get_yn_response(request):
     if request.method == 'GET':
