@@ -58,7 +58,6 @@ def get_chatbot_response(request):
 		1.2,	# float, representing input in 'repetition_penalty' Slider component
 		fn_index=0
     )
-    print(result)
     return Response(result)
 @api_view(['POST', 'GET'])
 def get_mbti(request):

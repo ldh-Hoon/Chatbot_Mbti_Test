@@ -12,7 +12,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
 
-/* App.module.css */
 /* Regular CSS syntax without :global */
 .app-container {
   font-family: 'jagbyeol', 'yeonjiche';
@@ -22,7 +21,7 @@
   padding: 20px;
 }
 
-/* 말풍선 스타일 */
+/* Message Bubble Styles */
 .user-message,
 .bot-message {
   padding: 0.8rem 1.5rem;
@@ -36,7 +35,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 사용자 말풍선 스타일 */
+/* User Message Style */
 .user-message {
   background-color: #ee8961;
   color: white;
@@ -45,7 +44,8 @@
   clear: both;
   font-family: 'yeonjiche';
 }
-/* AI 말풍선 스타일 */
+
+/* AI Message Style */
 .bot-message {
   background-color: #f5a788;
   color: #333;
@@ -54,7 +54,7 @@
   clear: both;
 }
 
-/* 채팅 창 전체 스타일 */
+/* Chat App Container */
 .chat-app {
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@
   font-size: 18px;
 }
 
-/* 대화 기록을 감싸는 컨테이너 스타일 */
+/* Message List Container */
 .message-list {
   display: flex;
   flex-direction: column;
@@ -83,7 +83,6 @@
   height: 60vh;
   overflow-y: auto;
   scroll-behavior: smooth;
-
   font-family: 'jagbyeol';
   font-size: 18px;
   margin: 30px;
@@ -93,6 +92,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Scrollbar Styles */
 .message-list::-webkit-scrollbar {
   width: 8px;
 }
@@ -108,7 +108,7 @@
   box-shadow: inset 0px 0px 6px #fff;
 }
 
-
+/* User Input Box Styles */
 .user-input-box input {
   margin-top: 10px;
   font-family: 'yeonjiche';
@@ -145,6 +145,8 @@
   display: table;
   clear: both;
 }
+
+/* Hover Effect on Button */
 .user-input-box button:hover{
   box-shadow: 0px 2px 5px #968080;
 }
