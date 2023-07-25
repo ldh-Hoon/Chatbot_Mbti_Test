@@ -49,7 +49,7 @@ var need_user_log_len = 50 ;
 var ending = 0;
 var mid_check = 0;
 function processOutput(output, n) {
-    output = output.substring(n - 1);
+    output = output.substring(n - 3);
     output = output.split("\n")[0];
     output = output.replace(/[=+#/\:@*"|\(\)\[\]`'…》·]/g, "");
     output = output.replace(/[a-zA-Z]/g, "");
