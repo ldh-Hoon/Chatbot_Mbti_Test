@@ -1,5 +1,6 @@
-const BACKEND_URL = "http://127.0.0.1:8000/";
+//const BACKEND_URL = "http://127.0.0.1:8000/";
 
+const BACKEND_URL = "https://ldhldh-chat-and-bert-rest-api-with-gradio.hf.space/run/predict"; // huggingface space
 
 //질문 목록
 const questions =['너는 취미가 뭐니?',
@@ -35,10 +36,12 @@ const ans_middle = ['음...슬슬 조금만 더 들으면 알 수 있겠는데..
 
 
 function processOutput(output, n) {
-    output = output.substring(n - 3);
+    output = output.toString();
+    output = output.substring(n);
     output = output.split("\n")[0];
-    output = output.replace(/[=+#/\:@*"|\(\)\[\]`'…》·]/g, "");
-    output = output.replace(/[a-zA-Z]/g, "");
+    output = output.split("<endoftext>")[0];
+    output = output.split("end")[0];
+    output = output.replace(/[=+#/\\\:@%&*$"|\(\)\[\]\<\>`'…》·]/g, "");
     return output;
 }
 function convertLabelToStr(label){
@@ -48,6 +51,7 @@ function convertLabelToStr(label){
       "LABEL_8": "ENTJ", "LABEL_9": "ENTP", "LABEL_10": "ENFJ", "LABEL_11": "ENFP",
       "LABEL_12": "ESTJ", "LABEL_13": "ESTP", "LABEL_14": "ESFJ", "LABEL_15": "ESFP"
   };
+  label = label.toString()
   return mbtiMap[label];
 }
 
