@@ -35,15 +35,6 @@ const ans_middle = ['음...슬슬 조금만 더 들으면 알 수 있겠는데..
               '너의 mbti는 파악되고있다...'];
 
 
-function processOutput(output, n) {
-    output = output.toString();
-    output = output.substring(n);
-    output = output.split("\n")[0];
-    output = output.split("<endoftext>")[0];
-    output = output.split("end")[0];
-    output = output.replace(/[=+#/\\\:@%&*$"|\(\)\[\]\<\>`'…》·]/g, "");
-    return output;
-}
 function convertLabelToStr(label){
   const mbtiMap = {
       "LABEL_0": "INTJ", "LABEL_1": "INTP", "LABEL_2": "INFJ", "LABEL_3": "INFP",

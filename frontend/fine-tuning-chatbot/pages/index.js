@@ -54,7 +54,7 @@ const ChatApp = () => {
           user_log += inputMessage + ", ";
           //내용만 보여지게 표시
           setInputMessage(""); // 메시지 전송 후 입력창 초기화
-          var user_message = "\nfriend: "+inputMessage+" \nyou: " //실제 챗봇에게 보내는 문자열 형식 
+          var user_message = "\nfriend: "+inputMessage+" \n\n### \nyou: " //실제 챗봇에게 보내는 문자열 형식 
           if(need_ans_add==1){
             user_message += ans_added[Math.floor(Math.random() * ans_added.length)]
             need_ans_add = 0;
@@ -73,7 +73,7 @@ const ChatApp = () => {
               throw new Error("Network response was not ok");
             }
             var data = await response.json();
-            const bot_ans = processOutput(data.data, all_log.length);
+            const bot_ans = data.data.toString();
             all_log += bot_ans;
             // 챗봇의 응답 메시지를 메시지 목록에 추가
             const botResponseMessage = { text: bot_ans, isUser: false };
@@ -105,7 +105,7 @@ const ChatApp = () => {
             //내용만 보여지게 표시
             setInputMessage(""); // 메시지 전송 후 입력창 초기화
             
-            const user_message = "\nfriend: "+inputMessage+" \nyou: "//실제 챗봇에게 보내는 문자열 형식 
+            const user_message = "\nfriend: "+inputMessage+" \n\n### \nyou: "//실제 챗봇에게 보내는 문자열 형식 
             all_log += user_message;//대화기록에 추가 
             try 
             { 
@@ -121,8 +121,7 @@ const ChatApp = () => {
                 throw new Error("Network response was not ok");
               }
               var data = await response.json();
-              data = data.data;
-              const bot_ans = processOutput(data, all_log.length);
+              const bot_ans = data.data.toString();
               all_log += bot_ans;
               // 챗봇의 응답 메시지를 메시지 목록에 추가
               const botResponseMessage = { text: bot_ans, isUser: false };
