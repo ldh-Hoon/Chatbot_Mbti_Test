@@ -46,4 +46,4 @@ function convertLabelToStr(label){
   return mbtiMap[label];
 }
 
-export {processOutput, convertLabelToStr, BACKEND_URL, questions, ans_added};
+export {convertLabelToStr, BACKEND_URL, questions, ans_added};
