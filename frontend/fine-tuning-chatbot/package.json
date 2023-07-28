@@ -10,6 +10,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://ldh-hoon.github.io/pages/",
   "dependencies": {
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
