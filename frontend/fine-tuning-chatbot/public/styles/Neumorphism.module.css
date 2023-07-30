@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'jagbyeol';
-  src: url('./fonts/나눔손글씨 따뜻한 작별.ttf') format('truetype');
+  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
 }
 
 @font-face {
@@ -10,15 +10,37 @@
   src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
 }
 
-@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+.body_ {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+}
 
 /* Regular CSS syntax without :global */
+
+
 .app-container {
   font-family: 'jagbyeol', 'yeonjiche';
   box-sizing: border-box;
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
 }
 
 /* Message Bubble Styles */
@@ -32,13 +54,13 @@
   font-family: 'jagbyeol';
   font-size: 18px;
   line-height: 1.5;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* User Message Style */
 .user-message {
-  background-color: #d1a08d;
-  color: white;
+  background: #f4f6f8;
+  color: rgb(51, 43, 40);
   align-self: flex-end;
   float: right;
   clear: both;
@@ -47,11 +69,9 @@
 
 /* AI Message Style */
 .bot-message {
-  background-color: #ee8961;
-  color: #ffffff;
+  background: #f4f6f8;
+  color: rgb(51, 43, 40);
   align-self: flex-start;
-  float: left;
-  clear: both;
 }
 
 /* Chat App Container */
@@ -62,12 +82,10 @@
   justify-content: center;
   height: 90vh;
   width: 80vw;
-  max-width: 500px;
+  max-width: 450px;
   margin: auto;
-  background-color: #ffe9e0;
-  border: 2px solid #ee8961;
+  background: #f4f6f8;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   font-family: 'jagbyeol';
   font-size: 18px;
 }
@@ -85,11 +103,12 @@
   scroll-behavior: smooth;
   font-family: 'jagbyeol';
   font-size: 18px;
-  margin: 30px;
-  padding: 10px;
+  margin: 20px;
+  padding: 20px;
   border-radius: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  background: #f1f3f5;
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
 }
 
 /* Scrollbar Styles */
@@ -98,16 +117,23 @@
 }
 
 .message-list::-webkit-scrollbar-thumb {
-  background-color: #ee8961;
-  border-radius: 10px;
+  background: #d9dbdc;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 8px #f1f3f5;
 }
 
 .message-list::-webkit-scrollbar-track {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: inset 0px 0px 6px #fff;
+  background: rgba(0, 0, 0, 0);
 }
 
+.user-input-box { 
+  display: flex;
+  float: center;
+  text-align: left;
+  justify-content: center;
+  place-items: center;
+  align-items: center;
+}
 /* User Input Box Styles */
 .user-input-box input {
   margin-top: 10px;
@@ -116,11 +142,11 @@
   padding: 10px;
   width: 60%;
   max-width: 300px;
-  border: 2px solid #ee8961;
-  border-radius: 20px;
+  border: none;
+  border-radius: 10px;
   margin-right: 5px;
-  align-self: flex-end;
-  float: right;
+  background: #f1f3f5;
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
 }
 
 .user-input-box button {
@@ -129,14 +155,12 @@
   padding: 10px;
   margin-top: 10px;
   margin-right: 10px;
-  background-color: #ee8961;
-  color: white;
+  background: #f1f3f5;
+  color: rgb(73, 65, 62);
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
-  align-self: flex-end;
-  float: right;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
 }
 
 /* Clearfix to handle floating elements */
@@ -148,5 +172,9 @@
 
 /* Hover Effect on Button */
 .user-input-box button:hover{
-  box-shadow: 0px 2px 5px #968080;
+  box-shadow: 0px 2px 5px #949393;
+}
+
+.spin{
+  visibility: hidden;
 }

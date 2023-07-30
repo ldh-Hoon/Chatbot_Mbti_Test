@@ -1,0 +1,176 @@
+/* App.module.css */
+
+@font-face {
+  font-family: 'jagbyeol';
+  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'yeonjiche';
+  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
+}
+
+
+.body_ {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+}
+
+/* Regular CSS syntax without :global */
+
+
+.app-container {
+  font-family: 'jagbyeol', 'yeonjiche';
+  box-sizing: border-box;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Message Bubble Styles */
+.user-message,
+.bot-message {
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  display: inline-block;
+  font-family: 'jagbyeol';
+  font-size: 18px;
+  line-height: 1.5;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User Message Style */
+.user-message {
+  background: #f4f6f8;
+  color: rgb(51, 43, 40);
+  align-self: flex-end;
+  float: right;
+  clear: both;
+  font-family: 'yeonjiche';
+}
+
+/* AI Message Style */
+.bot-message {
+  background: #f4f6f8;
+  color: rgb(51, 43, 40);
+  align-self: flex-start;
+}
+
+/* Chat App Container */
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 80vw;
+  max-width: 450px;
+  margin: auto;
+  background: #f4f6f8;
+  border-radius: 20px;
+  font-family: 'jagbyeol';
+  font-size: 18px;
+}
+
+/* Message List Container */
+.message-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 400px;
+  height: 60vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  font-family: 'jagbyeol';
+  font-size: 18px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: #f1f3f5;
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
+}
+
+/* Scrollbar Styles */
+.message-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background: #d9dbdc;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 8px #f1f3f5;
+}
+
+.message-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+.user-input-box { 
+  display: flex;
+  float: center;
+  text-align: left;
+  justify-content: center;
+  place-items: center;
+  align-items: center;
+}
+/* User Input Box Styles */
+.user-input-box input {
+  margin-top: 10px;
+  font-family: 'yeonjiche';
+  font-size: 18px;
+  padding: 10px;
+  width: 60%;
+  max-width: 300px;
+  border: none;
+  border-radius: 10px;
+  margin-right: 5px;
+  background: #f1f3f5;
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
+}
+
+.user-input-box button {
+  font-family: 'yeonjiche';
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: #f1f3f5;
+  color: rgb(73, 65, 62);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
+}
+
+/* Clearfix to handle floating elements */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Hover Effect on Button */
+.user-input-box button:hover{
+  box-shadow: 0px 2px 5px #949393;
+}

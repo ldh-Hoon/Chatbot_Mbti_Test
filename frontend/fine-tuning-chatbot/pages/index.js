@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from "react";
-import styles from "../public/styles/App.module.css";
-import {processOutput, convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/styles/value_list"
+import styles from "../public/styles/Neumorphism.module.css";
+import {convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/styles/value_list"
+import Image from 'next/image';
 
 var loading_wait = 0;
 var all_log = '';
@@ -21,6 +22,14 @@ const ChatApp = () => {
   const scrollToBottom = () => {
     var el = document.getElementById('message-list'); 
     el.scrollTop = el.scrollHeight;
+  }
+  const loading_on = () => {
+    var s = document.getElementById('spin');
+    s.style.visibility  = "visible";
+  }
+  const loading_off = () => {
+    var s = document.getElementById('spin');
+    s.style.visibility  = "hidden";
   }
   useEffect(() => {
     scrollToBottom(); // 컴포넌트가 렌더링될 때 스크롤을 아래로 이동
@@ -61,6 +70,7 @@ const ChatApp = () => {
           }
           all_log += user_message;//대화기록에 추가 
           try { 
+            loading_on();
             const response = await fetch(`${BACKEND_URL}`, {
               method: "POST",
               headers: {
@@ -109,6 +119,7 @@ const ChatApp = () => {
             all_log += user_message;//대화기록에 추가 
             try 
             { 
+              loading_on();
               const response = await fetch(`${BACKEND_URL}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json", 
@@ -175,30 +186,34 @@ const ChatApp = () => {
           loading_wait = 0;
         }
       tern += 1;
+      loading_off();
       }
     }
   };
 
   return (
+    
+    <div className={styles["app-container"]}>
     <div className={styles["chat-app"]}>
       <div className={styles["chat-box"]}>
-        <h1 max-width = "100px" align = "center">챗봇과 대화</h1>
-        <h4 align = "center" >(현재 {max_tern+1}턴까지 대화 후 mbti반환)</h4>
         <div className={styles["message-list"]} id="message-list" name="message-list">
           {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
         </div>
+
+        <div className={styles["spin"]} id="spin" name="spin"><img src="spin.gif" alt="spinner"/></div>
         <div className={styles["user-input-box"]}>
-        <button onClick={handleSendMessage} className={styles["button-font"]}>Send</button> {/* 커스텀 폰트 적용 */}
         <input
             type="text"
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
             className={styles["input-font"]} // 커스텀 폰트 적용
           />
+          <button onClick={handleSendMessage} className={styles["button-font"]}>Send</button> {/* 커스텀 폰트 적용 */}
         </div>
       </div>
+    </div>
     </div>
   );
 };
