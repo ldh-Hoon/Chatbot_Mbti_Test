@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: 'jagbyeol';
-  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
+  src: url('./fonts/Nanum DdaDdeusHanJagByeor.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'yeonjiche';
-  src: url('./fonts/나눔손글씨 연지체.ttf') format('truetype');
+  src: url('./fonts/yeonjiche.ttf') format('truetype');
 }
 
 @font-face {
@@ -35,7 +35,7 @@
 
 
 .app-container {
-  font-family: 'omyu_pretty';
+  font-family: 'omyu_pretty', 'jagbyeol', 'yeonjiche';
   box-sizing: border-box;
   margin: 0;
   width: 100vw;
@@ -69,6 +69,8 @@
   align-self: flex-end;
   float: right;
   clear: both;
+
+  font-family: 'jagbyeol';
 }
 
 /* AI Message Style */
@@ -76,6 +78,8 @@
   background: #eceff2;
   color: rgb(51, 43, 40);
   align-self: flex-start;
+
+  font-family: 'yeonjiche';
 }
 
 /* Chat App Container */
