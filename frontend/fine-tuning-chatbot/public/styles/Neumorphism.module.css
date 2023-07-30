@@ -40,7 +40,7 @@
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background: #f4f6f8;
+  background: #f8f9fa;
   display: flex;
   align-items: center;
   text-align: center;
@@ -70,7 +70,7 @@
   float: right;
   clear: both;
 
-  font-family: 'jagbyeol';
+  font-family: 'omyu_pretty';
 }
 
 /* AI Message Style */
@@ -79,7 +79,8 @@
   color: rgb(51, 43, 40);
   align-self: flex-start;
 
-  font-family: 'yeonjiche';
+  font-family: 'omyu_pretty';
+  font-size: 18px;
 }
 
 /* Chat App Container */
@@ -92,7 +93,7 @@
   width: 80vw;
   max-width: 450px;
   margin: auto;
-  background: #f4f6f8;
+  background: #f7f8f9;
   border-radius: 20px;
   font-size: 18px;
 }
