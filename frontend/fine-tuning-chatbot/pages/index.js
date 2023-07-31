@@ -45,9 +45,9 @@ const ChatApp = () => {
       isUser: false,
     };
     setMessages([initialBotMessage]);
-    var t = "첫 번째 질문! " + questions[Math.floor(Math.random() * questions.length)];
+    var t = questions[Math.floor(Math.random() * questions.length)];
     initialBotMessage = {
-      text: t, 
+      text: "첫 번째 질문! " + t, 
       isUser: false,
     };
     setMessages((prevMessages) => [...prevMessages, initialBotMessage]);
@@ -66,7 +66,7 @@ const ChatApp = () => {
           user_log += inputMessage + ", ";
           //내용만 보여지게 표시
           setInputMessage(""); // 메시지 전송 후 입력창 초기화
-          var user_message = "\nfriend: "+inputMessage+" \n\n### \nyou: " //실제 챗봇에게 보내는 문자열 형식 
+          var user_message = "\nfriend: "+inputMessage+" \nyou: " //실제 챗봇에게 보내는 문자열 형식 
           if(need_ans_add==1){
             user_message += ans_added[Math.floor(Math.random() * ans_added.length)]
             need_ans_add = 0;
@@ -92,9 +92,9 @@ const ChatApp = () => {
             const botResponseMessage = { text: bot_ans, isUser: false };
             setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             loading_wait = 0;
-            if(Math.random()>0.4)
+            if(Math.random()>0.5)
             {
-              if(bot_ans.slice(-1)!='?')
+              if(bot_ans.substr(-1)!='?' || bot_ans.substr(-1)!='?!')
               {
                 var t = "다음 질문! " + questions[Math.floor(Math.random() * questions.length)];
                 var initialBotMessage = {
@@ -121,7 +121,7 @@ const ChatApp = () => {
             //내용만 보여지게 표시
             setInputMessage(""); // 메시지 전송 후 입력창 초기화
             
-            const user_message = "\nfriend: "+inputMessage+" \n\n### \nyou: "//실제 챗봇에게 보내는 문자열 형식 
+            const user_message = "\nfriend: "+inputMessage+" \nyou: "//실제 챗봇에게 보내는 문자열 형식 
             all_log += user_message;//대화기록에 추가 
             try 
             { 
