@@ -1,7 +1,8 @@
 import React, { useState , useEffect } from "react";
-import styles from "../public/styles/Neumorphism.module.css";
+import styles from "../public/styles/App2.module.css";
 import {convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/styles/value_list"
 import Image from 'next/image';
+import MYAPP from "./_app.js"
 
 var loading_wait = 0;
 var all_log = '';
@@ -89,21 +90,24 @@ const ChatApp = () => {
             const botResponseMessage = { text: bot_ans, isUser: false };
             setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             loading_wait = 0;
+            if(Math.random()>0.6)
+            {
+              if(bot_ans.slice(-1)!='?')
+              {
+                var t = questions[Math.floor(Math.random() * questions.length)]
+                var initialBotMessage = {
+                  text: t, 
+                  isUser: false,
+                };
+                setMessages((prevMessages) => [...prevMessages, initialBotMessage]); 
+                all_log = "\nyou: " + t;
+                need_ans_add = 1;
+              }
+            }
           } catch (error) {
             console.error("Error sending message:", error);
             loading_wait = 0;
           }
-          if(Math.random()>0.7){
-            var t = questions[Math.floor(Math.random() * questions.length)]
-            var initialBotMessage = {
-              text: t, 
-              isUser: false,
-            };
-            setMessages((prevMessages) => [...prevMessages, initialBotMessage]); 
-            all_log = "\nyou: " + t;
-            need_ans_add = 1;
-          }
-          
         }
         else if(tern == max_tern)
         {
@@ -192,28 +196,32 @@ const ChatApp = () => {
   };
 
   return (
-    
     <div className={styles["app-container"]}>
-    <div className={styles["chat-app"]}>
-      <div className={styles["chat-box"]}>
-        <div className={styles["message-list"]} id="message-list" name="message-list">
-          {messages.map((message, index) => (
-            <Message key={index} message={message} />
-          ))}
-        </div>
+      <div>
+    <p>글씨1<hr/></p>
+    <p>
+      <div className={styles["chat-app"]}>
+        <div className={styles["chat-box"]}>
+          <div className={styles["message-list"]} id="message-list" name="message-list">
+            {messages.map((message, index) => (
+              <Message key={index} message={message} />
+            ))}
+          </div>
 
-        <div className={styles["spin"]} id="spin" name="spin"><img src="spin.gif" alt="spinner"/></div>
-        <div className={styles["user-input-box"]}>
-        <input
-            type="text"
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-            className={styles["input-font"]} // 커스텀 폰트 적용
-          />
-          <button onClick={handleSendMessage} className={styles["button-font"]}>Send</button> {/* 커스텀 폰트 적용 */}
+          <div className={styles["spin"]} id="spin" name="spin"><img src="/spin.gif" alt="spinner"/></div>
+          <div className={styles["user-input-box"]}>
+          <input
+              type="text"
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              className={styles["input-font"]} // 커스텀 폰트 적용
+            />
+            <button onClick={handleSendMessage} className={styles["button-font"]}>Send</button> {/* 커스텀 폰트 적용 */}
+          </div>
         </div>
       </div>
-    </div>
+    </p>
+      </div>
     </div>
   );
 };
@@ -225,6 +233,7 @@ const Message = ({ message }) => {
 
   return (
     <div className={messageClass}>
+      <p>{message.isUser}</p>
       <p>{message.text}</p>
     </div>
   );
