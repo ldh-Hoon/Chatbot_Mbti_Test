@@ -3,6 +3,8 @@ import styles from "../public/styles/App2.module.css";
 import {convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/styles/value_list"
 import Image from 'next/image';
 import MYAPP from "./_app.js"
+import { CiChat1 } from "react-icons/ci";
+import { SiProbot } from "react-icons/si";
 
 var loading_wait = 0;
 var all_log = '';
@@ -43,7 +45,7 @@ const ChatApp = () => {
       isUser: false,
     };
     setMessages([initialBotMessage]);
-    var t = questions[Math.floor(Math.random() * questions.length)]
+    var t = "첫 번째 질문! " + questions[Math.floor(Math.random() * questions.length)];
     initialBotMessage = {
       text: t, 
       isUser: false,
@@ -90,11 +92,11 @@ const ChatApp = () => {
             const botResponseMessage = { text: bot_ans, isUser: false };
             setMessages((prevMessages) => [...prevMessages, botResponseMessage]); 
             loading_wait = 0;
-            if(Math.random()>0.6)
+            if(Math.random()>0.4)
             {
               if(bot_ans.slice(-1)!='?')
               {
-                var t = questions[Math.floor(Math.random() * questions.length)]
+                var t = "다음 질문! " + questions[Math.floor(Math.random() * questions.length)];
                 var initialBotMessage = {
                   text: t, 
                   isUser: false,
@@ -198,8 +200,8 @@ const ChatApp = () => {
   return (
     <div className={styles["app-container"]}>
       <div>
-    <p>글씨1<hr/></p>
-    <p>
+        <h3><span className={styles["notbold"]}><CiChat1/> mbti 테스트<hr/></span></h3>
+      <div>
       <div className={styles["chat-app"]}>
         <div className={styles["chat-box"]}>
           <div className={styles["message-list"]} id="message-list" name="message-list">
@@ -213,6 +215,8 @@ const ChatApp = () => {
           <input
               type="text"
               value={inputMessage}
+              maxLength={30}
+              
               onChange={(e) => setInputMessage(e.target.value)}
               className={styles["input-font"]} // 커스텀 폰트 적용
             />
@@ -220,9 +224,9 @@ const ChatApp = () => {
           </div>
         </div>
       </div>
-    </p>
-      </div>
     </div>
+
+    </div></div>
   );
 };
 
@@ -231,10 +235,16 @@ const ChatApp = () => {
 const Message = ({ message }) => {
   const messageClass = message.isUser ? styles["user-message"] : styles["bot-message"]; // Use styles object for dynamic class names
 
+  if(message.isUser){
+    return (
+      <div className={messageClass}>
+        <p>{message.text}</p>
+      </div>
+    );
+  }
   return (
     <div className={messageClass}>
-      <p>{message.isUser}</p>
-      <p>{message.text}</p>
+      <p>&nbsp;&nbsp;<SiProbot/><br/>{message.text}</p>
     </div>
   );
 };

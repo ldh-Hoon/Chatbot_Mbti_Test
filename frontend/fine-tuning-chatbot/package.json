@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export" : "next export",
+    "export": "next export",
     "predeploy": "next build",
     "deploy": "gh-pages -d build"
   },
@@ -17,6 +17,7 @@
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1"
   }
 }

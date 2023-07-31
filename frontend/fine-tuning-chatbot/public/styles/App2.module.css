@@ -7,19 +7,6 @@
   font-style: normal;
 }
 
-.body_ {
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #f4f6f8;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  place-items: center;
-  overflow: hidden;
-  font-family: poppins;
-}
 
 /* Regular CSS syntax without :global */
 
@@ -42,12 +29,10 @@
 .bot-message {
   padding: 0.8rem 1.5rem;
   border-radius: 2px;
-  margin-bottom: 20px;
   max-width: 80%;
   display: inline-block;
   font-size: 18px;
   line-height: 1.5;
-  padding : 10;
 }
 
 /* User Message Style */
@@ -64,9 +49,16 @@
   background: #f8f9fa;
   color: rgb(51, 43, 40);
   align-self: flex-start;
-  border-left: 4px solid #f0eded;
   font-family: 'omyu_pretty';
   font-size: 18px;
+  text-align: left;
+}
+.bot-message ::before{
+  content: '    ';
+  align-self: flex-start;
+  border-left: 4px solid #e0dddd;
+  width : 20px;
+  height : 20px;
 }
 
 /* Chat App Container */
@@ -90,7 +82,7 @@
   justify-content: flex-start;
   width: 100%;
   max-width: 550px;
-  height: 60vh;
+  height: 70vh;
   overflow-y: auto;
   scroll-behavior: smooth;
   font-size: 18px;
@@ -119,7 +111,6 @@
   font-family: 'omyu_pretty';
   display: flex;
   float: center;
-  text-align: left;
   justify-content: center;
   place-items: center;
   align-items: center;
@@ -130,18 +121,15 @@
   margin-top: 10px;
   font-size: 18px;
   padding: 10px;
-  width: 60%;
-  max-width: 300px;
   border: none;
   border-radius: 2px;
   border-bottom: 1px solid #717070;
   margin-right: 5px;
   background: #f1f3f5;
-  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
+  width: 70%;
 }
 
 .user-input-box button {
-  border: 12px 25px 255px 4px #717070;
   font-family: 'omyu_pretty';
   font-size: 18px;
   padding: 10px;
@@ -151,7 +139,6 @@
   color: rgb(73, 65, 62);
   border: none;
   cursor: pointer;
-  box-shadow: inset 3px 3px 6px #cbced1, inset -3px -3px 6px white;
 }
 
 /* Clearfix to handle floating elements */
@@ -168,4 +155,7 @@
 
 .spin{
   visibility: hidden;
+}
+.notbold{
+  font-weight:normal;
 }
