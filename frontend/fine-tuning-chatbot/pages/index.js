@@ -4,9 +4,7 @@ import MyApp from "./_app.js";
 
 const IndexApp = () => {
     return (
-      <>
-          <MyApp />
-      </>
+        <MyApp />
     );
   };
   

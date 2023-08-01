@@ -2,7 +2,6 @@ import React, { useState , useEffect } from "react";
 import styles from "../public/styles/App2.module.css";
 import {convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/styles/value_list"
 import Image from 'next/image';
-import MYAPP from "./_app.js"
 import { CiChat1 } from "react-icons/ci";
 import { SiProbot } from "react-icons/si";
 
@@ -210,7 +209,7 @@ const ChatApp = () => {
             ))}
           </div>
 
-          <div className={styles["spin"]} id="spin" name="spin"><img src="/spin.gif" alt="spinner"/></div>
+          <div className={styles["spin"]} id="spin" name="spin"><img src="spin.gif" alt="loading"/></div>
           <div className={styles["user-input-box"]}>
           <input
               type="text"

@@ -8,4 +8,166 @@
     width: 100vw;
     height: 100vh;
     background: #f4f6f8;
+}
+
+/* App.module.css */
+
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  /* Regular CSS syntax without :global */
+  
+  
+  .app-container {
+    font-family: 'omyu_pretty';
+    box-sizing: border-box;
+    margin: 0;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    overflow: auto;
+  }
+  
+  /* Message Bubble Styles */
+  .user-message,
+  .bot-message {
+    padding: 0.8rem 1.5rem;
+    border-radius: 2px;
+    max-width: 80%;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  /* User Message Style */
+  .user-message {
+    background: #f8f9fa;
+    color: rgb(51, 43, 40);
+    align-self: flex-end;
+    clear: both;
+    font-family: 'omyu_pretty';
+  }
+  
+  /* AI Message Style */
+  .bot-message {
+    background: #f8f9fa;
+    color: rgb(51, 43, 40);
+    align-self: flex-start;
+    font-family: 'omyu_pretty';
+    font-size: 18px;
+    text-align: left;
+  }
+  .bot-message ::before{
+    content: '    ';
+    align-self: flex-start;
+    border-left: 4px solid #e0dddd;
+    width : 20px;
+    height : 20px;
+  }
+  
+  /* Chat App Container */
+  .chat-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 80vw;
+    max-width: 550px;
+    background: #f8f9fa;
+    border-radius: 2px;
+    font-size: 18px;
+  }
+  
+  /* Message List Container */
+  .message-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 550px;
+    height: 70vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    font-size: 18px;
+  
+    border-radius: 2px;
+  
+    background: #f8f9fa;
+  }
+  
+  /* Scrollbar Styles */
+  .message-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .message-list::-webkit-scrollbar-thumb {
+    background: #d9dbdc;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 8px #f1f3f5;
+  }
+  
+  .message-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+  
+  .user-input-box { 
+    font-family: 'omyu_pretty';
+    display: flex;
+    float: center;
+    justify-content: center;
+    place-items: center;
+    align-items: center;
+  }
+  /* User Input Box Styles */
+  .user-input-box input {
+    font-family: 'omyu_pretty';
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    border-bottom: 1px solid #717070;
+    margin-right: 5px;
+    background: #f1f3f5;
+    width: 70%;
+  }
+  
+  .user-input-box button {
+    font-family: 'omyu_pretty';
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: #f1f3f5;
+    color: rgb(73, 65, 62);
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Clearfix to handle floating elements */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Hover Effect on Button */
+  .user-input-box button:hover{
+    box-shadow: 0px 2px 5px #949393;
+  }
+  
+  .spin{
+    visibility: hidden;
+  }
+  .notbold{
+    font-weight:normal;
   }
