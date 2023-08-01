@@ -4,6 +4,7 @@ import {convertLabelToStr, BACKEND_URL, questions, ans_added } from "../public/s
 import Image from 'next/image';
 import { CiChat1 } from "react-icons/ci";
 import { SiProbot } from "react-icons/si";
+import Router from "next/router";
 
 var loading_wait = 0;
 var all_log = '';
@@ -20,6 +21,28 @@ const max_tern = 5;
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const start = () => {
+      // NProgress.start();
+      setLoading(true);
+    };
+    const end = () => {
+      // NProgress.done();
+      setLoading(false);
+    };
+
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []); // 로딩 
 
   const scrollToBottom = () => {
     var el = document.getElementById('message-list'); 
@@ -200,7 +223,9 @@ const ChatApp = () => {
     }
   };
 
-  return (
+  return loading ? (
+    <div className={styles["spin"]} id="spin" name="spin"><img src="spin.gif" alt="loading"/></div>
+    ) : (
     <div className={styles["app-container"]}>
       <div>
         <h3><span className={styles["notbold"]}><CiChat1/> mbti 테스트<hr/></span></h3>
