@@ -35,7 +35,7 @@ const ChatApp = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function() { //크기 조절시마다 아래로 스크롤
       scrollToBottom();
     })
     scrollToBottom(); // 컴포넌트가 렌더링될 때 스크롤을 아래로 이동
