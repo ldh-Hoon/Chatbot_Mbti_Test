@@ -48,6 +48,7 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 
 # 사용된 리소스
 <a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
+
 react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 # api서버
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
