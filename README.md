@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=Netlify&logoColor=white" />
   <img src="https://img.shields.io/badge/Google Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" />
-  <a href = "https://huggingface.co/"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="20"/>Huggingface</a>
+  <a href = "https://huggingface.co/"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo-with-title.svg" height="25"/></a>
 </div>
 
 <div align="center">
