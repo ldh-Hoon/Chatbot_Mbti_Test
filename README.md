@@ -51,7 +51,8 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 모델 추론은 Huggingface Space를 이용합니다. 
 
 # 배포
-Netlify에서 배포됩니다
+Netlify로 배포됩니다
+배포용 Github : https://github.com/Lanvizu/mbtiTestProject4
 
 # 참여자
 https://github.com/ldh-Hoon
