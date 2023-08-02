@@ -1,4 +1,4 @@
-# Chatbot_Mbti_Test2
+# Chatbot_Mbti_Test
 채팅형 mbti 테스트. 인공지능과 대화를 통해 내 mbti를 알아볼 수 있습니다.
 
 해당 프로젝트의 frontend 구현부입니다.
