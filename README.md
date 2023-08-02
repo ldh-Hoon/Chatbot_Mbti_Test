@@ -18,7 +18,7 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" />
 </div>
 
-# 구조
+# preview
 ![Animation](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/64159a73-28d6-48ba-a146-2d8a87ba695f)
 
 
