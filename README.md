@@ -26,10 +26,10 @@
 # 데이터셋 및 모델 
 https://github.com/Ludobico/KakaoChatData 을 다시 정제하여 사용하였습니다
 
-모델 : <img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b 
+모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
 
 # 사용된 리소스
-폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/>
+<a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
 
 # api서버
 
