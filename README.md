@@ -19,6 +19,8 @@
 </div>
 
 # 구조
+![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/f332d649-a297-4c25-a8cb-7c89dc5b5e18)
+
 
 # 데이터셋 및 모델 
 https://github.com/Ludobico/KakaoChatData 을 다시 정제하여 사용하였습니다
