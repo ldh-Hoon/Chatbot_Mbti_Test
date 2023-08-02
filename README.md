@@ -25,15 +25,27 @@
 ![Animation3](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/89fc8593-cdf4-49fa-b4fa-7c419228b0ca)
 
 # 데이터셋 및 모델 
-https://github.com/Ludobico/KakaoChatData 을 다시 정제하여 사용하였습니다
+<h5>Language Model</h5>
+데이터
+
+https://github.com/Ludobico/KakaoChatData 을 다시 정제하여 학습했습니다.
 
 모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
+
+<h5>mbti분류 BERT Model</h5>
+데이터
+
+https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset 를 정제하여 학습했습니다.
+
+모델 : https://huggingface.co/bert-base-cased
+
 
 # 사용된 리소스
 <a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
 
 # api서버
-
+![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
+모델 추론은 Huggingface Space를 이용합니다. 
 
 # 참여자
 https://github.com/ldh-Hoon
