@@ -1,4 +1,6 @@
 # Chatbot_Mbti_Test
+![bot](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/fbc96ead-3194-4745-be55-6b6d55524b51)
+
 채팅형 mbti 테스트. 인공지능과 대화를 통해 내 mbti를 알아볼 수 있습니다.
 
 해당 프로젝트의 frontend 구현부입니다.
