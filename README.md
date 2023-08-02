@@ -28,7 +28,7 @@
 <h5>Language Model</h5>
 데이터
 
-https://github.com/Ludobico/KakaoChatData를 다시 정제하여 학습했습니다.
+https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 학습했습니다.
 
 모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
 
