@@ -27,6 +27,8 @@
 
 ![Animation3](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/89fc8593-cdf4-49fa-b4fa-7c419228b0ca)
 
+![Animation4](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/f8c50b79-01ce-482a-8dc1-c92963d51897)
+
 # Demo 
 데모 링크
 
