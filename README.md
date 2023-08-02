@@ -5,10 +5,11 @@
 
 <div align="center">
   <h5>Frameworks/Platforms</h5>
-	<img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white" />
-	<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=Netlify&logoColor=white" />
   <a href = "https://huggingface.co/"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="20"/>Huggingface</a>
+  <img src="https://img.shields.io/badge/Colab-F9AB00?style=flat&logo=Colab&logoColor=white" />
 </div>
 
 <div align="center">
