@@ -8,7 +8,7 @@
 	<img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white" />
 	<img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=Netlify&logoColor=white" />
-  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="20"/>Huggingface
+  <a href = "https://huggingface.co/"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="20"/>Huggingface</a>
 </div>
 
 <div align="center">
