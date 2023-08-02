@@ -27,6 +27,9 @@
 
 ![Animation3](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/89fc8593-cdf4-49fa-b4fa-7c419228b0ca)
 
+# Demo 
+데모 링크
+
 # 데이터셋 및 모델 
 <h5>Language Model</h5>
 데이터
