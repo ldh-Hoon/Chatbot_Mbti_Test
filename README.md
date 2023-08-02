@@ -8,8 +8,8 @@
   <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=Next.js&logoColor=white" />
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white" />
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=Netlify&logoColor=white" />
+  <img src="https://img.shields.io/badge/Google Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" />
   <a href = "https://huggingface.co/"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="20"/>Huggingface</a>
-  <img src="https://img.shields.io/badge/Colab-F9AB00?style=flat&logo=Colab&logoColor=white" />
 </div>
 
 <div align="center">
@@ -29,14 +29,14 @@
 <h5>Language Model</h5>
 데이터
 
-https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 학습했습니다.
+https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab에서 학습했습니다.
 
 모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
 
 <h5>mbti분류 BERT Model</h5>
 데이터
 
-https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset 를 정제하여 학습했습니다.
+https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset 를 정제하여 Colab에서 학습했습니다.
 
 모델 : https://huggingface.co/bert-base-cased
 
