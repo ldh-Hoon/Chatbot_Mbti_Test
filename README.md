@@ -22,6 +22,7 @@
 ![Animation](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/64159a73-28d6-48ba-a146-2d8a87ba695f)
 
 
+![Animation3](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/89fc8593-cdf4-49fa-b4fa-7c419228b0ca)
 
 # 데이터셋 및 모델 
 https://github.com/Ludobico/KakaoChatData 을 다시 정제하여 사용하였습니다
