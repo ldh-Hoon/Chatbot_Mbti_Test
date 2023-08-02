@@ -19,7 +19,7 @@
 </div>
 
 # 구조
-![Animation2](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/321074da-8f77-4bc0-8e69-3ace41feb36c)
+![Animation](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/64159a73-28d6-48ba-a146-2d8a87ba695f)
 
 
 
