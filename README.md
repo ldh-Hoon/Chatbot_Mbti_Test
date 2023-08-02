@@ -48,6 +48,9 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
 모델 추론은 Huggingface Space를 이용합니다. 
 
+# 배포
+Netlify에서 배포됩니다
+
 # 참여자
 https://github.com/ldh-Hoon
 
