@@ -24,6 +24,11 @@ const max_tern = 20;
 var intro = 1;
 var questionslist = questions;
 
+const scrollToBottom = () => {
+  var el = document.getElementById('message-list');
+  el.scrollTop = el.scrollHeight;
+}
+
 const ChatApp = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
@@ -54,10 +59,7 @@ const ChatApp = () => {
     const wakeUpTime = Date.now() + ms;
     while (Date.now() < wakeUpTime) { }
   }
-  const scrollToBottom = () => {
-    var el = document.getElementById('message-list');
-    el.scrollTop = el.scrollHeight;
-  }
+
   const loading_on = () => {
     var s = document.getElementById('spin');
     s.style.visibility = "visible";
@@ -243,10 +245,11 @@ const ChatApp = () => {
               const bot_ans = convertLabelToStr(data[0]['label']);
               // 챗봇의 응답 메시지를 메시지 목록에 추가 , convertLabelToStr
 
-              const t = "너의 mbti는 " + bot_ans + "구나! " + "\n" + convertLabelToStr(data[0].label) + " : "
-                + Math.round(data[0]['score'] * 1000) / 10 + "%, "
+              const t = "너의 mbti는 " + bot_ans + "구나! " + "\n" 
+                + convertLabelToStr(data[0].label) + " : "
+                + Math.round(data[0]['score'] * 1000) / 10 + "%, "  + "\n"
                 + convertLabelToStr(data[1]['label']) + " : "
-                + Math.round(data[1]['score'] * 1000) / 10 + "%, "
+                + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n"
                 + convertLabelToStr(data[2]['label']) + " : "
                 + Math.round(data[2]['score'] * 1000) / 10 + "%, ";
               var botResponseMessage2 = { text: t, isUser: false };
@@ -321,6 +324,7 @@ const ChatApp = () => {
 const Message = ({ message }) => {
   const messageClass = message.isUser ? styles["user-message"] : styles["bot-message"]; // Use styles object for dynamic class names
 
+
   if (message.isUser) {
     return (
       <div className={messageClass}>
@@ -339,7 +343,10 @@ const Message = ({ message }) => {
 
           onInit={(typewriter) => {
             typewriter.typeString(message.text)
-              .start();
+            .callFunction(() => {
+              scrollToBottom();
+            })
+            .start();
           }}
         />
       </p>
