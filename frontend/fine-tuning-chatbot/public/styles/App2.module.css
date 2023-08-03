@@ -160,4 +160,8 @@
   font-weight:normal;
   border : none;
   font-size: large;
+  cursor: pointer; 
+}
+.kakaoButton :hover{
+  box-shadow: 0px 2px 5px #949393;
 }

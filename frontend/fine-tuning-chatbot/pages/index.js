@@ -111,8 +111,8 @@ const ChatApp = () => {
         window.Kakao.isInitialized();
       }
     }
-
-  }, []);
+    scrollToBottom();
+  }, [ ]);
 
 
   const handleSendMessage = async () => {
@@ -354,7 +354,6 @@ const ChatApp = () => {
 const Message = ({ message }) => {
   const messageClass = message.isUser ? styles["user-message"] : styles["bot-message"]; // Use styles object for dynamic class names
 
-
   if (message.isUser) {
     return (
       <div className={messageClass}>
@@ -370,9 +369,9 @@ const Message = ({ message }) => {
             id="kakao-link-btn"
             type="button"
             onClick={onShareKakaoClick}
-          >
+          >kakao로 결과 공유하기
             <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
-            kakao로 결과 공유하기</button>
+            </button>
         </div>
       );
     }
