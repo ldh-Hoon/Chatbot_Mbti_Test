@@ -24,6 +24,24 @@ const max_tern = 20;
 var intro = 1;
 var questionslist = questions;
 
+//kakao func
+const shareKakaoLink = (userId) => {
+  // @ts-ignore
+  window.Kakao.Link.createCustomButton({
+    container: "#kakao-link-btn",
+    templateId: "#id here",
+    templateArgs: {
+      userId: `${userId}`,
+    },
+  });
+};
+
+const onShareKakaoClick = () => {
+  shareKakaoLink(userId);
+};
+//_
+
+
 const scrollToBottom = () => {
   var el = document.getElementById('message-list');
   el.scrollTop = el.scrollHeight;
@@ -83,6 +101,17 @@ const ChatApp = () => {
       isUser: false,
     };
     setMessages([initialBotMessage]);
+
+    var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
+    setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
+
+    if (window.Kakao) { // kakao init
+      if (!window.Kakao.isInitialized()) {
+        window.Kakao.init(JAVASCRIPT_KEY)
+        window.Kakao.isInitialized();
+      }
+    }
+
   }, []);
 
 
@@ -123,9 +152,9 @@ const ChatApp = () => {
             var t = questionslist[qindex];
             questionslist.splice(qindex, 1); // 이미 한 질문은 제외 
             var initialBotMessage2 = {
-              text: "좋아! 테스트를 위해 나랑 조금만 이야기하면 돼! " + "\n" 
-              + "보다 정확한 결과를 위해 단답은 피해줘~  " + "\n " 
-              + intro_add[Math.floor(Math.random() * intro_add.length)] + " 첫 번째 질문! " + t,
+              text: "좋아! 테스트를 위해 나랑 조금만 이야기하면 돼! " + "\n"
+                + "보다 정확한 결과를 위해 단답은 피해줘~  " + "\n "
+                + intro_add[Math.floor(Math.random() * intro_add.length)] + " 첫 번째 질문! " + t,
               isUser: false,
             };
             setMessages((prevMessages) => [...prevMessages, initialBotMessage2]);
@@ -136,7 +165,7 @@ const ChatApp = () => {
         else if (tern < max_tern) {
           loading_wait = 1;
           if (user_log.length >= need_user_log_len) {
-            tern = max_tern-1;
+            tern = max_tern - 1;
           }
           const newMessage = { text: inputMessage, isUser: true };
           setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -245,9 +274,9 @@ const ChatApp = () => {
               const bot_ans = convertLabelToStr(data[0]['label']);
               // 챗봇의 응답 메시지를 메시지 목록에 추가 , convertLabelToStr
 
-              const t = "너의 mbti는 " + bot_ans + "구나! " + "\n" 
+              const t = "너의 mbti는 " + bot_ans + "구나! " + "\n"
                 + convertLabelToStr(data[0].label) + " : "
-                + Math.round(data[0]['score'] * 1000) / 10 + "%, "  + "\n"
+                + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
                 + convertLabelToStr(data[1]['label']) + " : "
                 + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n"
                 + convertLabelToStr(data[2]['label']) + " : "
@@ -255,13 +284,14 @@ const ChatApp = () => {
               var botResponseMessage2 = { text: t, isUser: false };
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
-
+              var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
+              setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
             }
             catch (error) {
               console.error("Error sending message:", error);
             }
           }
-          else{
+          else {
             var initialBotMessage = {
               text:
                 "미안" + ans_re_3[Math.floor(Math.random() * ans_re_3.length)] + "...모르겠어!" + "\n" + "\n"
@@ -332,26 +362,43 @@ const Message = ({ message }) => {
       </div>
     );
   }
-  return (
-    <div className={messageClass}>
-      <p>❚  <SiProbot /><br />
-        <Typewriter
-          options={{
-            loop: false,
-            delay: 45,
-          }}
+  else {
+    if (message.text == "_kakao공유하기") {//공유하기 
+      return (
+        <div className={messageClass}>
+          <button className={styles["kakaoButton"]}
+            id="kakao-link-btn"
+            type="button"
+            onClick={onShareKakaoClick}
+          >
+            <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
+            kakao로 결과 공유하기</button>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div className={messageClass}>
+          <p>❚  <SiProbot /><br />
+            <Typewriter
+              options={{
+                loop: false,
+                delay: 45,
+              }}
 
-          onInit={(typewriter) => {
-            typewriter.typeString(message.text)
-            .callFunction(() => {
-              scrollToBottom();
-            })
-            .start();
-          }}
-        />
-      </p>
-    </div>
-  );
+              onInit={(typewriter) => {
+                typewriter.typeString(message.text)
+                  .callFunction(() => {
+                    scrollToBottom();
+                  })
+                  .start();
+              }}
+            />
+          </p>
+        </div>
+      );
+    }
+  }
 };
 
 export default ChatApp;
