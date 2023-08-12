@@ -20,7 +20,6 @@ var ending = 0;
 var mid_check = 0;
 const max_tern = 20;
 
-
 var intro = 1;
 var questionslist = questions;
 
@@ -31,8 +30,8 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init(process.env.REACT_APP_SHARE_KAKAO_LINK_KEY); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
-    }
+      kakao.init("process.env.REACT_APP_SHARE_KAKAO_LINK_KEY"); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+    }//process.env.REACT_APP_SHARE_KAKAO_LINK_KEY
 
     kakao.Link.sendDefault({
       objectType: "feed", // 카카오 링크 공유 여러 type들 중 feed라는 타입 -> 자세한 건 카카오에서 확인
@@ -390,13 +389,14 @@ const Message = ({ message }) => {
     );
   }
   else {
+    const r = window.location;
     if (message.text == "_kakao공유하기") {//공유하기 
       return (
         <div className={messageClass}>
           <button className={styles["kakaoButton"]}
             id="kakao-link-btn"
             type="button"
-            onClick={() => shareKakao("http://localhost:3000", "mbti", share_text)}
+            onClick={() => shareKakao(r.toString(), "mbti", share_text)}
           >kakao로 결과 공유하기
             <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
             </button>
