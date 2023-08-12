@@ -30,7 +30,7 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init("process.env.REACT_APP_SHARE_KAKAO_LINK_KEY"); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+      kakao.init(process.env.REACT_APP_SHARE_KAKAO_LINK_KEY); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
     }//process.env.REACT_APP_SHARE_KAKAO_LINK_KEY
 
     kakao.Link.sendDefault({
@@ -306,11 +306,12 @@ const ChatApp = () => {
               var botResponseMessage2 = { text: t, isUser: false };
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
-              share_text = "내 mbti는?!" + "\n" + data[0].label + " : "
+              share_text = "내 mbti는?!" + "\n" + convertLabelToStr(data[0].label) + " : "
                   + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
-                  + data[1].label + " : "
+                  + convertLabelToStr(data[1].label) + " : "
                   + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n";
-
+                  + convertLabelToStr(data[2]['label']) + " : "
+                  + Math.round(data[2]['score'] * 1000) / 10 + "%, ";
               var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
               setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
             }
