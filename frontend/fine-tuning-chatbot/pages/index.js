@@ -24,16 +24,38 @@ const max_tern = 20;
 var intro = 1;
 var questionslist = questions;
 
+var share_text = "초기값 text" + "\n" + "줄바꿈";
+
 //kakao func
-const shareKakaoLink = (userId) => {
-  // @ts-ignore
-  window.Kakao.Link.createCustomButton({
-    container: "#kakao-link-btn",
-    templateId: "#id here",
-    templateArgs: {
-      userId: `${userId}`,
-    },
-  });
+export const shareKakao = (route, title, text) => { // url이 id값에 따라 변경되기 때문에 route를 인자값으로 받아줌
+  if (window.Kakao) {
+    const kakao = window.Kakao;
+    if (!kakao.isInitialized()) {
+      kakao.init(process.env.REACT_APP_SHARE_KAKAO_LINK_KEY); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+    }
+
+    kakao.Link.sendDefault({
+      objectType: "feed", // 카카오 링크 공유 여러 type들 중 feed라는 타입 -> 자세한 건 카카오에서 확인
+      content: {
+        title: title, // 인자값으로 받은 title
+        description: text, // 인자값으로 받은 title
+        imageUrl: "이미지 url",
+        link: {
+          mobileWebUrl: route, // 인자값으로 받은 route(uri 형태)
+          webUrl: route
+        }
+      },
+      buttons: [
+        {
+          title: "title",
+          link: {
+            mobileWebUrl: route,
+            webUrl: route
+          }
+        }
+      ]
+    });
+  }
 };
 
 const onShareKakaoClick = () => {
@@ -52,6 +74,14 @@ const ChatApp = () => {
   const [inputMessage, setInputMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
+  }, []);
+  
   useEffect(() => {
     const start = () => {
       // NProgress.start();
@@ -104,13 +134,6 @@ const ChatApp = () => {
 
     var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
     setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
-
-    if (window.Kakao) { // kakao init
-      if (!window.Kakao.isInitialized()) {
-        window.Kakao.init(JAVASCRIPT_KEY)
-        window.Kakao.isInitialized();
-      }
-    }
     scrollToBottom();
   }, [ ]);
 
@@ -284,6 +307,11 @@ const ChatApp = () => {
               var botResponseMessage2 = { text: t, isUser: false };
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
+              share_text = "내 mbti는?!" + "\n" + data[0].label + " : "
+                  + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
+                  + data[1].label + " : "
+                  + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n";
+
               var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
               setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
             }
@@ -368,7 +396,7 @@ const Message = ({ message }) => {
           <button className={styles["kakaoButton"]}
             id="kakao-link-btn"
             type="button"
-            onClick={onShareKakaoClick}
+            onClick={() => shareKakao("http://localhost:3000", "mbti", share_text)}
           >kakao로 결과 공유하기
             <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
             </button>
