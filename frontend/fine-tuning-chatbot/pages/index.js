@@ -30,7 +30,7 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
   if (window.Kakao) {
     const kakao = window.Kakao;
     if (!kakao.isInitialized()) {
-      kakao.init(process.env.REACT_APP_SHARE_KAKAO_LINK_KEY); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
+      kakao.init("2d6c8a35f8af41c05aef0c790a1f1681"); // 카카오에서 제공받은 javascript key를 넣어줌 -> .env파일에서 호출시킴
     }//process.env.REACT_APP_SHARE_KAKAO_LINK_KEY
 
     kakao.Link.sendDefault({
@@ -57,10 +57,6 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
   }
 };
 
-const onShareKakaoClick = () => {
-  shareKakaoLink(userId);
-};
-//_
 
 
 const scrollToBottom = () => {
@@ -136,7 +132,7 @@ const ChatApp = () => {
     scrollToBottom();
   }, [ ]);
 
-
+  
   const handleSendMessage = async () => {
     // id of the chat container ---------- ^^^
     if (inputMessage.trim() !== "") {
@@ -342,6 +338,12 @@ const ChatApp = () => {
     }
   };
 
+  const handleOnKeyPress = e => {
+    if (e.key === 'Enter') {
+      handleSendMessage(); // Enter 입력이 되면 클릭 이벤트 실행
+    }
+  };
+  
   return loading ? (
     <div className={styles["spin"]} id="spin" name="spin"><img src="spin.gif" alt="loading" /></div> // loading 
   ) : (
@@ -363,7 +365,7 @@ const ChatApp = () => {
                   type="text"
                   value={inputMessage}
                   maxLength={30}
-
+                  onKeyUp={handleOnKeyPress}
                   onChange={(e) => setInputMessage(e.target.value)}
                   className={styles["input-font"]} // 커스텀 폰트 적용
                 />
