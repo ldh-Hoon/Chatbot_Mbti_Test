@@ -46,7 +46,7 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
       },
       buttons: [
         {
-          title: "테스트하러 가기",
+          title: "대화하러 가기",
           link: {
             mobileWebUrl: route,
             webUrl: route
@@ -301,9 +301,9 @@ const ChatApp = () => {
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
               share_text = convertLabelToStr(data[0].label) + " : "
-                  + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
+                  + Math.round(data[0]['score'] * 1000) / 10 + "%, " + ", "
                   + convertLabelToStr(data[1].label) + " : "
-                  + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n";
+                  + Math.round(data[1]['score'] * 1000) / 10 + "%, " + ", ";
                   + convertLabelToStr(data[2]['label']) + " : "
                   + Math.round(data[2]['score'] * 1000) / 10 + "%, ";
               var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
@@ -397,7 +397,7 @@ const Message = ({ message }) => {
           <button className={styles["kakaoButton"]}
             id="kakao-link-btn"
             type="button"
-            onClick={() => shareKakao(r.toString(), "내 mbti는?!", share_text)}
+            onClick={() => shareKakao(r.toString(), "내 mbti는?! #채팅형 mbti 테스트", share_text)}
           >kakao로 결과 공유하기
             <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
             </button>
