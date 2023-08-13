@@ -38,7 +38,7 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
       content: {
         title: title, // 인자값으로 받은 title
         description: text, // 인자값으로 받은 title
-        imageUrl: "이미지 url",
+        imageUrl: "https://user-images.githubusercontent.com/139981434/257801881-fbc96ead-3194-4745-be55-6b6d55524b51.png",
         link: {
           mobileWebUrl: route, // 인자값으로 받은 route(uri 형태)
           webUrl: route
@@ -46,7 +46,7 @@ export const shareKakao = (route, title, text) => { // url이 id값에 따라 �
       },
       buttons: [
         {
-          title: "title",
+          title: "테스트하러 가기",
           link: {
             mobileWebUrl: route,
             webUrl: route
@@ -302,7 +302,7 @@ const ChatApp = () => {
               var botResponseMessage2 = { text: t, isUser: false };
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
-              share_text = "내 mbti는?!" + "\n" + convertLabelToStr(data[0].label) + " : "
+              share_text = convertLabelToStr(data[0].label) + " : "
                   + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
                   + convertLabelToStr(data[1].label) + " : "
                   + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n";
@@ -399,7 +399,7 @@ const Message = ({ message }) => {
           <button className={styles["kakaoButton"]}
             id="kakao-link-btn"
             type="button"
-            onClick={() => shareKakao(r.toString(), "mbti", share_text)}
+            onClick={() => shareKakao(r.toString(), "내 mbti는?!", share_text)}
           >kakao로 결과 공유하기
             <img src="https://seeklogo.com/images/K/kakaotalk-logo-274D191B7B-seeklogo.com.png" height="30"/>
             </button>
