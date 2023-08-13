@@ -15,7 +15,7 @@ var user_log = '';
 var top_pred = 0;
 
 var need_ans_add = 0;
-var need_user_log_len = 80;
+var need_user_log_len = 2;
 var ending = 0;
 var mid_check = 0;
 const max_tern = 20;
@@ -127,8 +127,6 @@ const ChatApp = () => {
     };
     setMessages([initialBotMessage]);
 
-    var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
-    setMessages((prevMessages) => [...prevMessages, botResponseMessage3]);
     scrollToBottom();
   }, [ ]);
 
