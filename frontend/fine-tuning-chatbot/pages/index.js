@@ -15,7 +15,7 @@ var user_log = '';
 var top_pred = 0;
 
 var need_ans_add = 0;
-var need_user_log_len = 2;
+var need_user_log_len = 80;
 var ending = 0;
 var mid_check = 0;
 const max_tern = 20;
