@@ -30,7 +30,7 @@
 ![Animation4](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/f8c50b79-01ce-482a-8dc1-c92963d51897)
 
 # Demo 
-데모 링크
+데모 링크 https://master--mbtitestchat.netlify.app/
 
 # 데이터셋 및 모델 
 <h5>Language Model</h5>
