@@ -301,9 +301,9 @@ const ChatApp = () => {
               setMessages((prevMessages) => [...prevMessages, botResponseMessage2]);
 
               share_text = convertLabelToStr(data[0].label) + " : "
-                  + Math.round(data[0]['score'] * 1000) / 10 + "%, " + ", "
+                  + Math.round(data[0]['score'] * 1000) / 10 + "%, " + "\n"
                   + convertLabelToStr(data[1].label) + " : "
-                  + Math.round(data[1]['score'] * 1000) / 10 + "%, " + ", ";
+                  + Math.round(data[1]['score'] * 1000) / 10 + "%, " + "\n"
                   + convertLabelToStr(data[2]['label']) + " : "
                   + Math.round(data[2]['score'] * 1000) / 10 + "%, ";
               var botResponseMessage3 = { text: "_kakao공유하기", isUser: false }; // kakao 공유하기 말풍선
