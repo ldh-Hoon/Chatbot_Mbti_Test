@@ -29,7 +29,6 @@
 2023년 7월 ~ 2023년 8월
 
 
-
 # preview
 <details>
     <summary>자세히</summary>
@@ -50,6 +49,8 @@
 Netlify로 배포됩니다
 [배포용 Github](https://github.com/Lanvizu/mbtiTestProject4)
 
+# 플로우차트
+
 # 구현된 기능
 
 
@@ -61,7 +62,7 @@ https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab�
 
 모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
 
-
+학습 코드  <a href="https://colab.research.google.com/drive/1u3anPYeuJcsdFRaRMByMB4hGbkWAEiR1?usp=sharing"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
 <h5>MBTI분류 Model</h5>
 데이터
@@ -81,8 +82,10 @@ react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 모델 추론은 Huggingface Space를 이용합니다. https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio 
 
 
+# 경험한 것
 
 
+# 개선할 점
 
 
 
