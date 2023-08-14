@@ -95,7 +95,7 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 
 # api서버
-![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
+<img src="https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91" height="20" />
 모델 추론은 🤗Huggingface Space를 이용합니다. 
 <a href="https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio "><img src="https://img.shields.io/badge/open in Huggingface-444444?style=flat&logo=Huggingface&logoColor=white" /></a>
 
