@@ -29,8 +29,11 @@
 
 ![Animation4](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/f8c50b79-01ce-482a-8dc1-c92963d51897)
 
-# Demo 
+# Demo 및 배포
 데모 링크 https://master--mbtitestchat.netlify.app/
+
+Netlify로 배포됩니다
+배포용 Github : https://github.com/Lanvizu/mbtiTestProject4
 
 # 데이터셋 및 모델 
 <h5>Language Model</h5>
@@ -54,18 +57,15 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 # api서버
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
-모델 추론은 Huggingface Space를 이용합니다. 
+모델 추론은 Huggingface Space를 이용합니다. https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio 
 
-# 배포
-Netlify로 배포됩니다
-배포용 Github : https://github.com/Lanvizu/mbtiTestProject4
 
 # 참여자
 https://github.com/ldh-Hoon
 
 https://github.com/Lanvizu
 
-+설명추가
+
 
 
 
