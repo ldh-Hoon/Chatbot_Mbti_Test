@@ -2,7 +2,9 @@
 <div align="center">
     <img src="https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/fbc96ead-3194-4745-be55-6b6d55524b51" />
 </div>
+
 채팅형 mbti 테스트. 인공지능과 대화를 통해 내 mbti를 알아볼 수 있습니다.
+
 
 해당 팀 프로젝트의 frontend 구현부입니다.
 
@@ -23,10 +25,14 @@
 </div>
 
 # 👨‍👨‍👧‍👧 참여자
+
 [임동훈](https://github.com/ldh-Hoon) [이준호](https://github.com/Lanvizu)
 
+
 # 📆 프로젝트 기간 
+
 2023년 7월 ~ 2023년 8월
+
 
 7.1~7.5 아이디어 구체화
 
@@ -36,7 +42,9 @@
 
 8.1~8.15 마무리 및 배포
 
+
 # 👀 preview
+
 <details>
     <summary>자세히</summary>
 
@@ -50,20 +58,25 @@
 </details>
 
 
+
 # 🔎 Demo 및 배포
 [데모 링크](https://master--mbtitestchat.netlify.app/)
 
 Netlify로 배포됩니다
 [배포용 Github](https://github.com/Lanvizu/mbtiTestProject4)
 
+
 # 🖌 플로우차트
+
 <details>
     <summary>자세히</summary>
 
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test/assets/139981434/54170d87-21a1-4905-9606-d49d779f0842)
 </details>
 
+
 # 🔧 구현된 기능
+
 메인페이지, 채팅페이지 이동
 
 챗봇과 채팅
@@ -72,7 +85,9 @@ MBTI 추론결과 출력
 
 결과 카카오톡 공유하기
 
+
 # 🔨 데이터셋 및 모델 
+
 <h5>Language Model</h5>
 데이터 : 
 https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab에서 학습했습니다.
@@ -89,15 +104,22 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 
 학습 코드  <a href="https://colab.research.google.com/drive/1YurLnkVP5cMnbHwM1j9tN8yGQGfbiqAO?authuser=1"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
+
+
 # ⚡ 사용된 폰트 및 이미지
+
 <a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
 
 react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
+
+
 
 # 💻 api서버
 <img src="https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91" height="20" />
 모델 추론은 🤗Huggingface Space를 이용합니다. 
 <a href="https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio "><img src="https://img.shields.io/badge/open in Huggingface-444444?style=flat&logo=Huggingface&logoColor=white" /></a>
+
+
 
 # 📌 마주했던 이슈들
 <details>
@@ -136,7 +158,11 @@ react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 
 </details>
 
+
+
 # 🗒 경험한 것
+
+
 
 
 # 🚀 개선할 점
