@@ -1,4 +1,4 @@
-# Chatbot_Mbti_Test
+# Chatbot_Mbti_Test🤗
 <div align="center">
     <img src="https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/fbc96ead-3194-4745-be55-6b6d55524b51" />
 </div>
@@ -28,6 +28,13 @@
 # 프로젝트 기간 
 2023년 7월 ~ 2023년 8월
 
+7.1~7.5 아이디어 구체화
+
+7.5~7.20 인공지능 모델 파인튜닝 및 학습
+
+7.20~8.1 프론트 페이지 구현
+
+8.1~8.15 마무리 및 배포
 
 # preview
 <details>
@@ -77,6 +84,7 @@ https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset �
 
 모델 : https://huggingface.co/bert-base-cased
 
+학습 코드  <a href="https://colab.research.google.com/drive/1YurLnkVP5cMnbHwM1j9tN8yGQGfbiqAO?authuser=1"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
 # 사용된 폰트/image
 <a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
@@ -85,8 +93,8 @@ react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 
 # api서버
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
-모델 추론은 Huggingface Space를 이용합니다. https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio 
-
+모델 추론은 🤗Huggingface Space를 이용합니다. 
+<a href="https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio "><img src="https://img.shields.io/badge/open in Huggingface-444444?style=flat&logo=Huggingface&logoColor=white" /></a>
 
 # 경험한 것
 
