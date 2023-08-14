@@ -77,7 +77,7 @@ MBTI 추론결과 출력
 데이터 : 
 https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab에서 학습했습니다.
 
-모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
+모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b">EleutherAI/polyglot-ko-1.3b</a>
 
 학습 코드  <a href="https://colab.research.google.com/drive/1u3anPYeuJcsdFRaRMByMB4hGbkWAEiR1?usp=sharing"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
