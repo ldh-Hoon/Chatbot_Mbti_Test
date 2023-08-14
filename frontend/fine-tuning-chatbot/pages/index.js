@@ -188,7 +188,7 @@ const ChatApp = () => {
           user_log += inputMessage + " \n";
           //내용만 보여지게 표시
           setInputMessage(""); // 메시지 전송 후 입력창 초기화
-          var user_message = "\nfriend: " + inputMessage + " \n\n### \nyou: " //실제 챗봇에게 보내는 문자열 형식 
+          var user_message = "\nfriend: " + inputMessage + "\nyou: " //실제 챗봇에게 보내는 문자열 형식 
           
           all_log += user_message;//대화기록에 추가 
 
@@ -199,7 +199,7 @@ const ChatApp = () => {
           else{
             user_message = '';
           }
-
+          
           try {
             loading_on();
             const response = await fetch(`${BACKEND_URL}`, {
@@ -252,7 +252,7 @@ const ChatApp = () => {
               //내용만 보여지게 표시
               setInputMessage(""); // 메시지 전송 후 입력창 초기화
 
-              var user_message = "\nfriend: " + inputMessage + " \n\n### \nyou: "//실제 챗봇에게 보내는 문자열 형식 
+              var user_message = "\nfriend: " + inputMessage + "\nyou: "//실제 챗봇에게 보내는 문자열 형식 
               all_log += user_message;//대화기록에 추가 
 
               if (need_ans_add == 1) {
