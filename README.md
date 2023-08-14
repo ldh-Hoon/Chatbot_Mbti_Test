@@ -57,6 +57,11 @@ Netlify로 배포됩니다
 [배포용 Github](https://github.com/Lanvizu/mbtiTestProject4)
 
 # 플로우차트
+<details>
+    <summary>자세히</summary>
+
+![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test/assets/139981434/54170d87-21a1-4905-9606-d49d779f0842)
+</details>
 
 # 구현된 기능
 메인페이지, 채팅페이지 이동
@@ -69,8 +74,7 @@ MBTI 추론결과 출력
 
 # 데이터셋 및 모델 
 <h5>Language Model</h5>
-데이터
-
+데이터 : 
 https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab에서 학습했습니다.
 
 모델 : <a href="https://huggingface.co/EleutherAI/polyglot-ko-1.3b"><img src="https://aeiljuispo.cloudimg.io/v7/https://cdn-uploads.huggingface.co/production/uploads/1614054059123-603481bb60e3dd96631c9095.png?w=200&h=200&f=face" height="20" />EleutherAI/polyglot-ko-1.3b</a>
@@ -78,15 +82,14 @@ https://github.com/Ludobico/KakaoChatData 를 다시 정제하여 LoRA로 Colab�
 학습 코드  <a href="https://colab.research.google.com/drive/1u3anPYeuJcsdFRaRMByMB4hGbkWAEiR1?usp=sharing"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
 <h5>MBTI분류 Model</h5>
-데이터
-
+데이터 :
 https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset 를 정제하여 Colab에서 학습했습니다.
 
 모델 : https://huggingface.co/bert-base-cased
 
 학습 코드  <a href="https://colab.research.google.com/drive/1YurLnkVP5cMnbHwM1j9tN8yGQGfbiqAO?authuser=1"><img src="https://img.shields.io/badge/open in Colab-F9AB00?style=flat&logo=Google Colab&logoColor=white" /></a>
 
-# 사용된 폰트/image
+# 사용된 폰트 및 이미지
 <a href="https://noonnu.cc/font_page/1136">폰트 : <img src="https://noonnucc-production.sfo2.cdn.digitaloceanspaces.com/202304/1680424033641026.png" height="25"/></a> 
 
 react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
@@ -95,6 +98,43 @@ react-icons SiProbot https://react-icons.github.io/react-icons/search?q=SiProbot
 ![image](https://github.com/ldh-Hoon/Chatbot_Mbti_Test2/assets/139981434/90aab449-2e92-4854-8a6a-b6d21bb09f91)
 모델 추론은 🤗Huggingface Space를 이용합니다. 
 <a href="https://huggingface.co/spaces/ldhldh/chat_and_bert_rest-api-with-gradio "><img src="https://img.shields.io/badge/open in Huggingface-444444?style=flat&logo=Huggingface&logoColor=white" /></a>
+
+# 마주했던 이슈들
+<details>
+    <summary>모델 학습 이슈</summary>
+
+
+</details>
+
+<details>
+    <summary>언어모델/분류모델 서빙(리소스의 한계)</summary>
+
+
+</details>
+
+<details>
+    <summary>언어모델 답변의 개선</summary>
+
+
+</details>
+
+<details>
+    <summary>대화 로직</summary>
+
+
+</details>
+
+<details>
+    <summary>배포 이슈</summary>
+
+
+</details>
+
+<details>
+    <summary>프론트 보안</summary>
+
+
+</details>
 
 # 경험한 것
 
