@@ -60,7 +60,7 @@
 
 
 # 🔎 Demo 및 배포
-[데모 링크](https://master--mbtitestchat.netlify.app/)
+[데모 링크](https://mbtitestchat.netlify.app/)
 
 Netlify로 배포됩니다
 [배포용 Github](https://github.com/Lanvizu/mbtiTestProject4)
